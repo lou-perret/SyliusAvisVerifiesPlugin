@@ -21,14 +21,12 @@ services:
   ikuzo_sylius_avis_verifies.command.process_channel_reviews:
     class: Ikuzo\SyliusAvisVerifiesPlugin\Command\AvisVerifiesProcessChannelReviewsCommand
     arguments: 
-      - '@sylius.http_client'
       - '@doctrine.orm.entity_manager'
     tags: ['console.command']
 
   ikuzo_sylius_avis_verifies.command.process_product_reviews:
     class: Ikuzo\SyliusAvisVerifiesPlugin\Command\AvisVerifiesProcessProductReviewsCommand
     arguments: 
-      - '@sylius.http_client'
       - '@doctrine.orm.entity_manager'
       - '@messenger.default_bus'
     tags: ['console.command']

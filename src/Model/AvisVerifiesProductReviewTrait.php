@@ -4,23 +4,15 @@ declare(strict_types=1);
 
 namespace Ikuzo\SyliusAvisVerifiesPlugin\Model;
 
-use Sylius\Component\Core\Model\Customer;
-use Sylius\Component\Review\Model\ReviewerInterface;
 trait AvisVerifiesProductReviewTrait
 {
-    /**
-     * @ORM\Column(name="source", type="string", nullable=true)
-     */
+    #[ORM\Column(name:'source', type: 'string', nullable: true )]
     protected $source;
 
-    /**
-     * @ORM\Column(name="source_id", type="string", nullable=true)
-     */
+    #[ORM\Column(name:'source_id', type: 'string', nullable: true )]
     protected $idSource;
 
-    /**
-     * @ORM\Column(name="source_raw", type="array", nullable=true)
-     */
+    #[ORM\Column(name: 'source_raw', type: 'array', nullable: true)]
     protected $rawSource;
 
     public function getSource(): string

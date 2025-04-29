@@ -18,8 +18,10 @@ class AvisVerifiesProcessChannelReviewsCommand extends Command
 {
     const API_URL = 'https://cl.avis-verifies.com/fr/cache/';
     protected static $defaultName = 'ikuzo:avisverifies:process-channel-reviews';
+    private ClientInterface $client;
 
-    public function __construct(private ClientInterface $client, private EntityManagerInterface $em) {
+    public function __construct(private EntityManagerInterface $em) {
+        $this->client = new \GuzzleHttp\Client();
         parent::__construct(null);
     }
 

@@ -17,10 +17,9 @@ class AvisVerifiesProcessProductReviewsCommand extends Command
 {
     const API_URL = 'https://cl.avis-verifies.com/fr/cache/';
     protected static $defaultName = 'ikuzo:avisverifies:process-product-reviews';
-
     // /AWS/PRODUCT_API/REVIEWS/files_list.txt
 
-    public function __construct(private ClientInterface $client, private EntityManagerInterface $em, private MessageBusInterface $bus) {
+    public function __construct(private EntityManagerInterface $em, private MessageBusInterface $bus) {
         parent::__construct(null);
     }
 

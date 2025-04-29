@@ -14,9 +14,9 @@ class AvisVerifiesWebservice
     
     private ClientInterface $client;
 
-    public function __construct(ClientInterface $client)
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new \GuzzleHttp\Client();
     }
 
     public function sendOrder(OrderInterface $order): bool
